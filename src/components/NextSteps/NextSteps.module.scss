@@ -1,0 +1,142 @@
+@import "../../variables";
+
+.nextStepsContainer {
+  padding: var(--spacingLarge);
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.title {
+  margin-bottom: 7px;
+}
+
+.nextActionContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: var(--spacingLarge);
+  border: var(--borderWidthNormal) solid var(--colorNeutral200);
+  border-radius: var(--borderRadius);
+  margin-bottom: var(--spacingMedium);
+}
+
+.nextActionButton {
+  font-size: var(--fontSizeMedium);
+  font-weight: var(--fontWeightMedium);
+  color: white;
+  background-color: var(--colorPrimary700);
+  border: none;
+  border-radius: var(--borderRadius);
+  padding: 10px 12px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: var(--colorPrimary800);
+  }
+
+  &:active {
+    background-color: var(--colorPrimary800);
+  }
+}
+
+.nextActionDescription {
+  font-size: var(--fontSizeNormal);
+  color: var(--colorNeutral700);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Urgency Signals Styles */
+.urgencyContainer {
+  padding: 10px;
+}
+
+.urgencyTitleContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.urgencyTitle {
+  font-size: var(--fontSizeLarge);
+  font-weight: var(--fontWeightMedium);
+  color: var(--colorNeutral900);
+  margin: 0;
+}
+
+.urgencyDot {
+  width: 8px;
+  height: 8px;
+  background-color: #ff7a33;
+  border-radius: 50%;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ff7a33;
+    border-radius: 50%;
+    animation: ping 2.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+}
+
+@keyframes ping {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  20% {
+    transform: scale(2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.urgencyList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacingSmall);
+}
+
+.urgencyItem {
+  padding: var(--spacingSmall) var(--spacingMedium);
+  background: var(--colorNeutral050);
+  border-radius: var(--borderRadius);
+  border-left: 4px solid var(--colorPrimary500);
+}
+
+.urgencyContent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.urgencyIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--colorPrimary600);
+  flex-shrink: 0;
+  margin-top: 1px; // Slight adjustment for visual alignment with text
+}
+
+.urgencyMessage {
+  font-size: var(--fontSizeMedium);
+  color: var(--colorNeutral800);
+  line-height: 1.4;
+  flex: 1;
+}

@@ -46,13 +46,31 @@ export interface VisitedInterviewStage {
   interviews: ScheduledInterview[];
 }
 
+/** What the recruiter needs to do next to move the candidate forward */
+export enum NextAction {
+  SCHEDULE_INTERVIEW = "schedule_interview",
+  FOLLOW_UP_RESCHEDULE = "follow_up_reschedule",
+  PING_FOR_FEEDBACK = "ping_for_feedback",
+  MAKE_DECISION = "make_decision",
+}
+
+/** Signals that indicate urgency for taking the next action */
+export interface UrgencySignal {
+  type: "days_in_stage" | "strong_feedback" | "upcoming_interview_issues";
+  message: string;
+}
+
 export interface InterviewProgress {
   /** Interview stages that the candidate has been through */
   visitedStages: VisitedInterviewStage[];
-  /** The next stage the candidate is expected move to. They may not. */
-  nextStage?: {
+  /** The upcoming stages the candidate is expected to move through */
+  upcomingStages: {
     interviewStage: InterviewStage;
     /** Potential interview schedules that need to be scheduled. Can be empty. */
     interviewSchedule?: Interview[];
-  };
+  }[];
+  /** What the recruiter needs to do next */
+  nextAction: NextAction;
+  /** Signals indicating urgency for the next action */
+  urgencySignals: UrgencySignal[];
 }

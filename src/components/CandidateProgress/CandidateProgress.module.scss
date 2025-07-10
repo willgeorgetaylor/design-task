@@ -21,6 +21,7 @@
 
   .secondColumn {
     grid-area: second;
+    align-self: start;
   }
 }
 
@@ -37,6 +38,9 @@
 
   .secondColumn {
     grid-area: second;
+    position: sticky;
+    top: var(--spacingLarge);
+    align-self: start;
   }
 }
 

@@ -17,6 +17,7 @@
   cursor: pointer;
   transition: background-color 0.15s ease-in-out;
   user-select: none;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
 
   &:focus {
     outline: 2px solid var(--colorPrimary500);
@@ -57,11 +58,40 @@
   flex-shrink: 0;
 }
 
+.rectangleIcon {
+  background: white;
+  border-radius: 3px;
+  border: 1px solid var(--colorNeutral500);
+  width: 12px;
+  height: 12px;
+}
+
 .stageTitle {
   font-size: var(--fontSizeLarge);
   font-weight: var(--fontWeightMediumBold);
   color: var(--colorNeutral900);
   margin: 0;
+}
+
+.tag {
+  color: white;
+  font-size: var(--fontSizeXsmall);
+  font-weight: var(--fontWeightMediumBold);
+  padding: 3px 4px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1;
+}
+
+.currentTag {
+  @extend .tag;
+  background: var(--colorPrimary800);
+}
+
+.upcomingTag {
+  @extend .tag;
+  background: var(--colorNeutral600);
 }
 
 .stageRightContainer {
@@ -79,7 +109,6 @@
 .stageDates {
   font-size: var(--fontSizeSmall);
   color: var(--colorNeutral700);
-  text-align: left;
   display: flex;
   align-items: center;
   gap: var(--spacingXxsmall);
@@ -102,8 +131,7 @@
 .interviewCount {
   font-size: var(--fontSizeSmall);
   color: var(--colorNeutral700);
-  min-width: 90px;
-  text-align: left;
+  text-align: right;
 }
 
 .interviewsList {
@@ -120,14 +148,9 @@
   gap: var(--spacingNormal);
   padding: var(--spacingNormal) var(--spacingLarge);
   align-items: center;
-  border-bottom: var(--borderWidthNormal) solid var(--colorNeutral150);
 
   &:nth-child(even) {
     background: var(--colorNeutral100);
-  }
-
-  &:last-child {
-    border-bottom: none;
   }
 }
 
@@ -206,7 +229,7 @@
   }
 
   &.tentative {
-    background: #f97316;
+    background: #c56b2b;
     color: white;
   }
 
@@ -245,7 +268,7 @@
   }
 
   &.tentative {
-    color: #f97316;
+    color: #c56b2b;
   }
 
   &.declined {
@@ -265,12 +288,11 @@
 }
 
 .score {
-  font-size: var(--fontSizeSmall);
+  font-size: var(--fontSizeMedium);
   font-weight: var(--fontWeightMediumBold);
   padding: var(--spacingXxxxsmall) var(--spacingXsmall);
   border-radius: calc(var(--borderRadius) / 2);
   min-width: 24px;
-  margin-right: 4px;
   text-align: center;
   position: relative;
 
@@ -289,6 +311,15 @@
   }
 
   &.score1 {
+    background: var(--colorNegative600);
+    color: var(--colorNegative200);
+
+    &::before {
+      border-right-color: var(--colorNegative600);
+    }
+  }
+
+  &.score2 {
     background: var(--colorNegative200);
     color: var(--colorNegative600);
 
@@ -297,30 +328,21 @@
     }
   }
 
-  &.score2 {
-    background: var(--colorWarning200);
-    color: var(--colorWarning600);
-
-    &::before {
-      border-right-color: var(--colorWarning200);
-    }
-  }
-
   &.score3 {
-    background: var(--colorVanilla300);
-    color: var(--colorNeutral800);
-
-    &::before {
-      border-right-color: var(--colorVanilla300);
-    }
-  }
-
-  &.score4 {
     background: var(--colorPositive200);
     color: var(--colorPositive600);
 
     &::before {
       border-right-color: var(--colorPositive200);
+    }
+  }
+
+  &.score4 {
+    background: var(--colorPositive600);
+    color: var(--colorPositive200);
+
+    &::before {
+      border-right-color: var(--colorPositive600);
     }
   }
 
@@ -346,6 +368,29 @@
   text-align: center;
   color: var(--colorNeutral600);
   font-style: italic;
+}
+
+.upcomingInterviewsList {
+  &.collapsed {
+    display: none;
+  }
+}
+
+.upcomingInterviewRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacingNormal) var(--spacingLarge);
+
+  &:nth-child(even) {
+    background: var(--colorNeutral100);
+  }
+}
+
+.upcomingLabel {
+  font-size: var(--fontSizeSmall);
+  color: var(--colorPrimary700);
+  font-weight: var(--fontWeightMedium);
 }
 
 .expandButton {

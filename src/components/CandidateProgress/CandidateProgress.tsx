@@ -2,6 +2,7 @@ import * as React from "react";
 import styles from "./CandidateProgress.module.scss";
 import { InterviewProgress } from "../../types";
 import { InterviewHistory } from "../InterviewHistory";
+import { NextSteps } from "../NextSteps";
 import { formatTimeSpent } from "../../utils/timeUtils";
 
 export function CandidateProgress({ data }: { data: InterviewProgress }) {
@@ -30,18 +31,17 @@ export function CandidateProgress({ data }: { data: InterviewProgress }) {
             </div>
           )}
         </div>
-        <InterviewHistory visitedStages={data.visitedStages} />
+        <InterviewHistory
+          visitedStages={data.visitedStages}
+          upcomingStages={data.upcomingStages}
+        />
       </div>
 
       <div className={styles.secondColumn}>
-        <div className={styles.titleContainer}>
-          <h2>Next Steps</h2>
-          <p>
-            Upcoming interviews and next stage information will be displayed
-            here.
-          </p>
-        </div>
-        {/* TODO: Add next stage content */}
+        <NextSteps
+          nextAction={data.nextAction}
+          urgencySignals={data.urgencySignals}
+        />
       </div>
     </div>
   );
