@@ -1,0 +1,62 @@
+@import "../../variables";
+
+.candidateHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacingSmall);
+  margin-bottom: var(--spacingXlarge);
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--spacingXxsmall);
+}
+
+.breadcrumbLink {
+  display: flex;
+  align-items: center;
+  gap: var(--spacingXxsmall);
+  color: var(--colorNeutral700);
+  text-decoration: none;
+  font-size: var(--fontSizeSmall);
+  padding: 0 6px;
+  margin: calc(-1 * var(--spacingXxsmall)) calc(-1 * var(--spacingXsmall));
+
+  @include interactiveBase;
+
+  &:hover {
+    @include interactiveHoverVanilla;
+  }
+}
+
+.breadcrumbIcon {
+  color: currentColor;
+  flex-shrink: 0;
+}
+
+.candidateInfo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacingNormal);
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.candidateName {
+  font-family: var(--fontFamilyHeaders);
+  font-size: var(--fontSizeXxxlarge);
+  font-weight: var(--fontWeightMediumBold);
+  color: var(--colorNeutral900);
+  margin: 0;
+  line-height: var(--lineHeightTitle);
+}

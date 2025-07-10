@@ -1,0 +1,45 @@
+{
+  "name": "react-typescript-and-sass",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "main": "src/index.js",
+  "dependencies": {
+    "@ngneat/falso": "3.0.0",
+    "@phosphor-icons/react": "^2.1.10",
+    "@types/javascript-time-ago": "2.0.2",
+    "javascript-time-ago": "2.3.7",
+    "lottie-react": "^2.4.1",
+    "luxon": "1.27.0",
+    "motion": "^12.23.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-scripts": "5.0.1",
+    "sanitize.css": "12.0.1",
+    "sass": "1.35.1",
+    "unique-random-array": "3.0.0",
+    "uuid": "8.3.2"
+  },
+  "devDependencies": {
+    "@types/luxon": "1.27.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@types/uuid": "8.3.0",
+    "@typescript-eslint/eslint-plugin": "^8.36.0",
+    "@typescript-eslint/parser": "^8.36.0",
+    "eslint": "^8.0.0",
+    "typescript": "4.9.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

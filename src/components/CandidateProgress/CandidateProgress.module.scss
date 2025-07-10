@@ -1,0 +1,64 @@
+@import "../../variables";
+
+.container {
+  display: grid;
+  gap: var(--spacingLarge);
+  width: 100%;
+}
+
+/* Mobile-first: vertical stack with second column first */
+@media (max-width: 768px) {
+  .container {
+    grid-template-areas:
+      "second"
+      "first";
+    grid-template-columns: 1fr;
+  }
+
+  .firstColumn {
+    grid-area: first;
+  }
+
+  .secondColumn {
+    grid-area: second;
+  }
+}
+
+/* Desktop: two columns side by side */
+@media (min-width: 769px) {
+  .container {
+    grid-template-areas: "first second";
+    grid-template-columns: 3fr 2fr;
+  }
+
+  .firstColumn {
+    grid-area: first;
+  }
+
+  .secondColumn {
+    grid-area: second;
+  }
+}
+
+/* Column styling */
+.firstColumn,
+.secondColumn {
+  background: var(--colorNeutral000);
+  border-radius: var(--borderRadius);
+  border: var(--borderWidthNormal) solid var(--colorNeutral200);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+}
+
+.titleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacingLarge);
+}
+
+.enteredLabel {
+  font-size: var(--fontSizeSmall);
+  color: var(--colorNeutral700);
+  text-align: right;
+}

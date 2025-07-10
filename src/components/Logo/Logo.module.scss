@@ -1,0 +1,13 @@
+.logo {
+  cursor: pointer;
+  padding: 3px;
+  color: #5c52c6;
+
+  path {
+    transition: fill 0.2s ease;
+  }
+
+  &:hover {
+    color: #6359d3; /* Lighter shade for hover state */
+  }
+}

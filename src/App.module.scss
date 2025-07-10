@@ -1,0 +1,50 @@
+@import "./variables";
+
+html,
+body {
+  font-size: var(--fontSizeRoot);
+  font-weight: var(--fontWeightNormal);
+  background-color: var(--colorVanilla200);
+  color: black;
+  line-height: var(--lineHeightNormal);
+  overscroll-behavior: none;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+* {
+  font-family: var(--fontFamily);
+}
+
+/* Header tags use TT Hoves font */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--fontFamilyHeaders);
+  letter-spacing: -0.02em;
+  font-optical-sizing: auto;
+  font-style: normal;
+  margin: 0;
+}
+
+*::selection {
+  background-color: #5c52c630;
+}
+
+.app {
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacingLarge);
+  width: 100%;
+}

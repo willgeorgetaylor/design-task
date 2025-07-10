@@ -1,0 +1,68 @@
+@import "../../variables";
+
+.navbar {
+  background-color: var(--colorNeutral000);
+  border-bottom: 0.5px solid var(--colorNeutral200);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  width: 100%;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--spacingLarge);
+}
+
+.navTray {
+  display: flex;
+  align-items: center;
+  gap: var(--spacingXsmall);
+}
+
+.navTrayItem {
+  display: flex;
+  align-items: center;
+  padding: 6px var(--spacingXsmall);
+  gap: var(--spacingXsmall);
+  user-select: none;
+
+  cursor: pointer;
+
+  border-radius: var(--borderRadius);
+  border: none;
+  color: var(--colorNeutral700);
+  background-color: var(--colorNeutral000);
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: var(--colorPrimary100);
+  }
+
+  &:active {
+    transform: scale(0.995);
+  }
+}
+
+/* Responsive logo behavior */
+.fullLogo {
+  display: block;
+}
+
+.monogramLogo {
+  display: none;
+}
+
+/* Switch to monogram logo on smaller screens (640px and below) */
+@media (max-width: 640px) {
+  .fullLogo {
+    display: none;
+  }
+
+  .monogramLogo {
+    display: block;
+  }
+}

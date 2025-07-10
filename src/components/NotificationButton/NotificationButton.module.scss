@@ -1,0 +1,30 @@
+@import "../../variables";
+
+.notificationButton {
+  display: flex;
+  align-items: center;
+  padding: 10px 14px;
+  font-size: 13px;
+  gap: 8px;
+  user-select: none;
+
+  color: var(--colorNeutral900);
+  background-color: var(--colorNeutral000);
+  border: none;
+
+  @include interactiveBase;
+
+  &:hover {
+    @include interactiveHover;
+
+    .bellAnimation {
+      opacity: 1;
+    }
+  }
+}
+
+.bellAnimation {
+  opacity: 0.7;
+  margin-left: -2px;
+  margin-top: -1px;
+}
