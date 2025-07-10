@@ -1,15 +1,7 @@
 import * as React from "react";
 import styles from "./NextSteps.module.scss";
 import { NextAction, UrgencySignal } from "../../types";
-import {
-  Clock,
-  ClockIcon,
-  CrossIcon,
-  Star,
-  StarIcon,
-  Warning,
-  XIcon,
-} from "@phosphor-icons/react";
+import { ClockIcon, StarIcon, XIcon } from "@phosphor-icons/react";
 
 interface NextStepsProps {
   nextAction: NextAction;
