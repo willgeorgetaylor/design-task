@@ -274,11 +274,11 @@
     background: var(--colorNegative600);
     color: var(--colorNegative200);
   } @else if $score == 2 {
-    background: var(--colorNegative200);
-    color: var(--colorNegative600);
+    background: var(--colorNegative600);
+    color: var(--colorNegative200);
   } @else if $score == 3 {
-    background: var(--colorPositive200);
-    color: var(--colorPositive600);
+    background: var(--colorPositive600);
+    color: var(--colorPositive200);
   } @else if $score == 4 {
     background: var(--colorPositive600);
     color: var(--colorPositive200);

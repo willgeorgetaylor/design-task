@@ -278,8 +278,7 @@
   }
 
   &.score1 {
-    background: var(--colorNegative600);
-    color: var(--colorNegative200);
+    @include scoreBadge(1);
 
     &::before {
       border-right-color: var(--colorNegative600);
@@ -287,26 +286,23 @@
   }
 
   &.score2 {
-    background: var(--colorNegative200);
-    color: var(--colorNegative600);
+    @include scoreBadge(2);
 
     &::before {
-      border-right-color: var(--colorNegative200);
+      border-right-color: var(--colorNegative600);
     }
   }
 
   &.score3 {
-    background: var(--colorPositive200);
-    color: var(--colorPositive600);
+    @include scoreBadge(3);
 
     &::before {
-      border-right-color: var(--colorPositive200);
+      border-right-color: var(--colorPositive600);
     }
   }
 
   &.score4 {
-    background: var(--colorPositive600);
-    color: var(--colorPositive200);
+    @include scoreBadge(4);
 
     &::before {
       border-right-color: var(--colorPositive600);
