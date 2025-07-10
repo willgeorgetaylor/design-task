@@ -33,6 +33,7 @@
   --colorPrimary300: #b5b0e9;
   --colorPrimary200: #dbd9f1;
   --colorPrimary100: #f3f2f7;
+  --colorPrimary50: #f9f9fc;
 
   /* Negative */
   --colorNegative600: #dc3030;
@@ -245,8 +246,8 @@
 
 /* Row with alternating backgrounds */
 @mixin alternatingRows {
-  &:nth-child(even) {
-    background: var(--colorNeutral100);
+  &:nth-child(odd) {
+    background: var(--colorPrimary50);
   }
 }
 

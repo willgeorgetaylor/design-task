@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: space-between;
   padding: var(--spacingNormal) var(--spacingLarge);
-  background: var(--colorVanilla100);
+  background: var(--colorVanilla0);
   cursor: pointer;
   transition: background-color 0.15s ease-in-out;
   user-select: none;
@@ -31,10 +31,6 @@
 
 .stageHeader.notExpandable {
   cursor: default;
-
-  &:hover {
-    background: var(--colorVanilla100);
-  }
 }
 
 .stageTitleContainer {
@@ -377,7 +373,7 @@
   justify-content: center;
 
   .stageHeader:hover:not(.notExpandable) & {
-    background: var(--colorVanilla400);
+    background: var(--colorPrimary100);
   }
 
   > div {
