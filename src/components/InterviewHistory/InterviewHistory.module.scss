@@ -9,7 +9,7 @@
   cursor: pointer;
   transition: background-color 0.15s ease-in-out;
   user-select: none;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  box-shadow: var(--shadowStage);
 
   &:focus {
     outline: 2px solid var(--colorPrimary500);
@@ -83,7 +83,7 @@
 
 .upcomingTag {
   @extend .tag;
-  background: var(--colorNeutral600);
+  background: var(--colorNeutral800);
 }
 
 .stageRightContainer {
@@ -141,9 +141,7 @@
   padding: var(--spacingNormal) var(--spacingLarge);
   align-items: center;
 
-  &:nth-child(even) {
-    background: var(--colorNeutral100);
-  }
+  @include alternatingRows;
 }
 
 .interviewTitle {
@@ -155,19 +153,19 @@
 .interviewDateTime {
   display: flex;
   flex-direction: column;
-  gap: 1px;
+  gap: 4px;
 }
 
 .interviewDate {
   font-size: var(--fontSizeSmall);
-  color: var(--colorNeutral700);
+  color: var(--colorNeutral900);
   margin: 0;
   line-height: 1.2;
 }
 
 .interviewTime {
-  font-size: var(--fontSizeXsmall);
-  color: var(--colorNeutral600);
+  font-size: var(--fontSizeSmall);
+  color: var(--colorNeutral800);
   margin: 0;
   line-height: 1.2;
 }
@@ -191,10 +189,7 @@
 }
 
 .interviewerAvatar {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  object-fit: cover;
+  @include avatar(28px);
 }
 
 .rsvpIndicator {
@@ -208,7 +203,7 @@
   align-items: center;
   justify-content: center;
   border: 2px solid white;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  box-shadow: var(--shadowMedium);
 
   svg {
     width: 8px;
@@ -221,7 +216,7 @@
   }
 
   &.tentative {
-    background: #c56b2b;
+    background: var(--colorWarning400);
     color: white;
   }
 
@@ -251,25 +246,9 @@
 }
 
 .rsvpStatus {
-  font-size: var(--fontSizeXsmall);
+  font-size: var(--fontSizeSmall);
   font-weight: var(--fontWeightLightBold);
   line-height: 1.3;
-
-  &.accepted {
-    color: var(--colorPositive600);
-  }
-
-  &.tentative {
-    color: #c56b2b;
-  }
-
-  &.declined {
-    color: var(--colorNegative600);
-  }
-
-  &.noResponse {
-    color: var(--colorNeutral600);
-  }
 }
 
 .scoreContainer {
@@ -280,7 +259,7 @@
 }
 
 .score {
-  font-size: var(--fontSizeMedium);
+  font-size: var(--fontSizeNormal);
   font-weight: var(--fontWeightMediumBold);
   padding: var(--spacingXxxxsmall) var(--spacingXsmall);
   border-radius: calc(var(--borderRadius) / 2);
@@ -374,42 +353,18 @@
   justify-content: space-between;
   padding: var(--spacingNormal) var(--spacingLarge);
 
-  &:nth-child(even) {
-    background: var(--colorNeutral100);
-  }
+  @include alternatingRows;
 }
 
 .upcomingLabel {
   font-size: var(--fontSizeSmall);
   color: var(--colorPrimary700);
-  font-weight: var(--fontWeightMedium);
 }
 
 .scheduleButton {
+  @include buttonSecondary;
   font-size: var(--fontSizeSmall);
-  font-weight: var(--fontWeightMedium);
-  color: var(--colorPrimary700);
-  background-color: white;
-  border: 1px solid var(--colorPrimary200);
-  border-radius: var(--borderRadius);
   padding: 6px 12px;
-  cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease;
-
-  &:hover {
-    background-color: var(--colorPrimary100);
-    color: var(--colorPrimary800);
-  }
-
-  &:active {
-    background-color: var(--colorPrimary200);
-    color: var(--colorPrimary800);
-  }
-
-  &:focus {
-    outline: 2px solid var(--colorPrimary300);
-    outline-offset: 1px;
-  }
 }
 
 .expandButton {

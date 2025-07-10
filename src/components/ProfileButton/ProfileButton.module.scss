@@ -35,11 +35,7 @@
 
 .avatar {
   position: relative;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  object-fit: cover;
-  flex-shrink: 0;
+  @include avatar(28px);
   z-index: 1;
 }
 

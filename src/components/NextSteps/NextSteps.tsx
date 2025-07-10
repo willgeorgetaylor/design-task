@@ -61,9 +61,9 @@ export function NextSteps({ nextAction, urgencySignals }: NextStepsProps) {
       <h2 className={styles.title}>Next Step</h2>
 
       <div className={styles.nextActionContainer}>
-        <h3 className={styles.nextActionTitle}>
+        <div className={styles.nextActionTitle}>
           {getNextActionLabel(nextAction)}
-        </h3>
+        </div>
         <p className={styles.nextActionDescription}>
           {getNextActionDescription(nextAction)}
         </p>
@@ -75,7 +75,7 @@ export function NextSteps({ nextAction, urgencySignals }: NextStepsProps) {
       {urgencySignals.length > 0 && (
         <div className={styles.urgencyContainer}>
           <div className={styles.urgencyTitleContainer}>
-            <h4 className={styles.urgencyTitle}>Take action soon</h4>
+            <div className={styles.urgencyTitle}>Take action soon</div>
             <div className={styles.urgencyDot}></div>
           </div>
           <ul className={styles.urgencyList}>

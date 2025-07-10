@@ -47,11 +47,7 @@
 /* Column styling */
 .firstColumn,
 .secondColumn {
-  background: var(--colorNeutral000);
-  border-radius: var(--borderRadius);
-  border: var(--borderWidthNormal) solid var(--colorNeutral200);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-  overflow: hidden;
+  @include cardBase;
 }
 
 .titleContainer {
